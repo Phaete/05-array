@@ -1,5 +1,7 @@
 package com.phaete;
 
+import java.util.Scanner;
+
 public class Challenges {
     public static void main(String[] args) {
         // What are the advantages and disadvantages of using for loops compared to for-each loops in Java?
@@ -73,6 +75,24 @@ public class Challenges {
 
         for (int number : sumArray) {
             System.out.println(number);
+        }
+
+        // Bonus: Implement a program that reads a text from the console and then outputs the letters individually. Tip: Learn about the Scanner class.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter some text:");
+
+        if (scanner.hasNext()) {
+            String text = scanner.nextLine();
+
+            // Using for:
+            for (int i = 0; i < text.length(); i++) {
+                System.out.println(text.charAt(i)); // Usage of String method charAt(index)
+            }
+
+            // Using for-each:
+            for (char letter : text.toCharArray()) { // Usage of String method toCharArray()
+                System.out.println(letter);
+            }
         }
     }
 }
